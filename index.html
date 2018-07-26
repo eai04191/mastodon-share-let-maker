@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Mastodon Share let Maker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+</head>
+
+<body>
+    <h1>Mastodon Share let Maker</h1>
+    <form>
+        <label for="instance">Instance: </label>
+        <input type="text" id="instance" name="instance" placeholder="mstdn.maud.io" />
+    </form>
+    <div id="result"></div>
+    <div id="usage" style="display: none;">
+        <p>Perfect! A bookmarklet was created! Now you can test this by clicking on this link.</p>
+        <p>Let's bookmark it if it moves correctly!</p>
+    </div>
+    <footer>
+        <div>
+            <p>Made by
+                <a href="https://mizle.net">Eai</a>.</p>
+        </div>
+        <div>
+            <p>Code Hosted on
+                <a href="https://github.com/eai04191/mastodon-share-let-maker">GitHub</a>.</p>
+        </div>
+    </footer>
+    <script>
+        let input = document.getElementById("instance");
+
+        let makeLet = function () {
+            let value = input.value;
+            console.log(value);
+            if (value) {
+                let instance = getInstance(value);
+                let result = document.getElementById("result");
+                result.innerHTML =
+                    `<h2><a href="javascript:void(open('https://${instance}/share?text='+encodeURIComponent(document.title)+'%20'+encodeURIComponent(document.location)))">Toot! at ${instance}</a></h2>`;
+                let usage = document.getElementById("usage");
+                usage.style = "display: block;";
+            }
+        };
+
+        function getInstance(value) {
+            if (value.includes(":")) {
+                value = getHostnameFromString(value);
+            }
+            return value;
+        }
+
+        function getHostnameFromString(path) {
+            var result = path.replace(/\\/g, '/').match(/\/\/([^/]*)/);
+            if (!result) return '';
+            return result[1];
+        };
+
+        input.addEventListener("input", makeLet);
+    </script>
+</body>
+
+</html>

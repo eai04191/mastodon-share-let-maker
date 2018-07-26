@@ -1,0 +1,14 @@
+form {
+    display: flex;
+}
+
+input {
+    width: 100%;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #e1e8ed;
+    margin-top: 10rem;
+}

@@ -25,7 +25,7 @@ function getInstance(value) {
 }
 
 function getHostnameFromString(path) {
-  var result = path.replace(/\\/g, "/").match(/\/\/([^/]*)/);
+  const result = path.replace(/\\/g, "/").match(/\/\/([^/]*)/);
   if (!result) return "";
   return result[1];
 }

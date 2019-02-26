@@ -10,7 +10,8 @@ const makeLet = function() {
     const value = input.value;
     if (value) {
       const server = getServer(value);
-      result.innerHTML = `<h2><a href="javascript:void(open('https://${server}/share?text='+encodeURIComponent(document.title)+'%20'+encodeURIComponent(document.location)))">Toot! at ${instance}</a></h2>`;
+      const script = `javascript:(function(w%2Cd%2Ce)%7Blet%20note%3Dw.getSelection().toString()%3Bif(note)%7Bnote%3D%22%5Cn%3E%20%22%20%2B%20note%3B%7Dopen(%22https%3A%2F%2F${server}%2Fshare%3Ftext%3D%22%2Be(d.title%20%2B%20%22%5Cn%22%20%2B%20d.location%20%2B%20note%20%2B%20%22%5Cn%22))%3B%7D)(window%2Cdocument%2CencodeURIComponent)%3Bvoid(0);`;
+      result.innerHTML = `<h2><a href="${script}">Toot! at ${server}</a></h2>`;
       result.style = "display: block;";
       usage.style = "display: block;";
     }

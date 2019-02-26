@@ -1,4 +1,4 @@
-const input = document.getElementById("instance");
+const input = document.getElementById("server");
 
 const makeLet = function() {
   const result = document.getElementById("result");
@@ -9,15 +9,15 @@ const makeLet = function() {
   } else {
     const value = input.value;
     if (value) {
-      const instance = getInstance(value);
-      result.innerHTML = `<h2><a href="javascript:void(open('https://${instance}/share?text='+encodeURIComponent(document.title)+'%20'+encodeURIComponent(document.location)))">Toot! at ${instance}</a></h2>`;
+      const server = getServer(value);
+      result.innerHTML = `<h2><a href="javascript:void(open('https://${server}/share?text='+encodeURIComponent(document.title)+'%20'+encodeURIComponent(document.location)))">Toot! at ${instance}</a></h2>`;
       result.style = "display: block;";
       usage.style = "display: block;";
     }
   }
 };
 
-function getInstance(value) {
+function getServer(value) {
   if (value.includes(":")) {
     value = getHostnameFromString(value);
   }

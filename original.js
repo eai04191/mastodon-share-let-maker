@@ -1,9 +1,13 @@
-// Original script before conversion to bookmarklet.
+// Original script before convert to bookmarklet.
+// To convert using https://jp.piliapp.com/minify/yui-compressor/
 
-(function (w, d, e) {
-    const note = w.getSelection().toString();
+(function(a, c, b) {
+    let note = a.getSelection().toString();
     if (note) {
-        note = "\r> " + note;
+        note = "%5Cn> " + note.split("%5Cn").join("%5Cn> ");
     }
-    console.log("https://stellaria.network/share?text=" + e(d.title) + "%20" + e(d.location));
+    open(
+        "https://'+server+'/share?text=" +
+            b(c.title + "%5Cn" + c.location + note + "%5Cn")
+    );
 })(window, document, encodeURIComponent);

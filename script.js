@@ -1,10 +1,8 @@
 const makeLet = function() {
   const result = document.getElementById("result");
-  const usage = document.getElementById("usage");
   const url = document.getElementById("server");
   if (url.value.length == 0) {
     result.style = "display: none;";
-    usage.style = "display: none;";
   } else {
     const value = url.value;
     const config = {
@@ -30,7 +28,6 @@ const makeLet = function() {
       result.innerHTML = `<h2><a>Toot! at ${server}</a></h2>`;
       result.querySelector("a").href = script;
       result.style = "display: block;";
-      usage.style = "display: block;";
     }
   }
 };

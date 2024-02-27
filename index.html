@@ -1,26 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Mastodon Share let Maker</title>
+    <title>Mastodon Share Bookmarklet Creator</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
 </head>
 
 <body>
-    <h1>Mastodon Share let Maker</h1>
+    <h1>Mastodon Share Bookmarklet Creator</h1>
     <form>
         <label for="server">Server: </label>
         <input type="text" id="server" name="server" placeholder="Enter your Server URL in here." />
     </form>
     <div id="result" style="display: none;"></div>
-    <div id="usage" style="display: none;">
-        <p>A bookmarklet was created! Now you can test it by clicking on this link.</p>
-        <p>Let's bookmark it if it works the way you wanted it to!</p>
-    </div>
     <div>
         <details>
             <summary>Customize</summary>
@@ -29,6 +25,31 @@
                 Open in new window
             </label>
         </details>
+    </div>
+    <div>
+        <h2>How to Use</h2>
+        <section>
+            <h3>Step 1</h3>
+            <p>Enter the Server URL. The easiest way to find your Server URL is by opening your Mastodon timeline and then copying the entire URL from your browser's address bar.</p>
+            <img src="./media/step1-server-url.png" />
+            <p>To test, click the prominent link located just below the input field. Verify that it populates your Mastodon server's post field with the page's title and URL.</p>
+            <video src="./media/step1-test.mp4" controls></video>
+        </section>
+        <section>
+            <h3>Step 2</h3>
+            <p>If the bookmarklet works correctly, drag the link to your bookmarks bar to save it. You can then use it from any page.</p>
+            <video src="./media/step2-save.mp4" controls></video>
+        </section>
+        <section>
+            <h3>Tips: Quotes</h3>
+            <p>You can quote a sentence by selecting it and then opening the bookmarklet.</p>
+            <video src="./media/quote.mp4" controls></video>
+        </section>
+        <srction>
+            <h3>Tips: Open in new window</h3>
+            <p>When creating it, if you check "Open in new window" from Customize, a window will open instead of a tab.</p>
+            <video src="./media/new-window.mp4" controls></video>
+        </srction>
     </div>
     <footer>
         <div>
